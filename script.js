@@ -95,12 +95,10 @@ const observer = new IntersectionObserver((entries) => {
     const link = document.querySelector(`.side-link[href="#${id}"]`);
 
     if (entry.isIntersecting) {
-      // Remove active from all links
       navLinks.forEach((l) => {
         l.classList.remove('active');
         l.removeAttribute('aria-current');
       });
-      // Add active to corresponding link
       if (link) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
@@ -122,5 +120,46 @@ window.addEventListener('load', () => {
     });
     activeLink.classList.add('active');
     activeLink.setAttribute('aria-current', 'page');
+  }
+});
+
+// ========== CERTIFICATE LIGHTBOX ==========
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxClose = document.querySelector('.lightbox-close');
+const certificateCards = document.querySelectorAll('.certificate-card');
+
+// Open lightbox when a certificate card is clicked
+certificateCards.forEach(card => {
+  card.addEventListener('click', () => {
+    const imgSrc = card.querySelector('img').src;
+    const imgAlt = card.querySelector('img').alt;
+    lightboxImg.src = imgSrc;
+    lightboxImg.alt = imgAlt;
+    lightbox.classList.add('open');
+  });
+});
+
+// Close lightbox functions
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  // Clear the image (optional) so it doesn't flash when closing
+  lightboxImg.src = '';
+}
+
+// Close when the close button (✕) is clicked
+lightboxClose.addEventListener('click', closeLightbox);
+
+// Close when clicking anywhere on the dark background (but not on the image itself)
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+// Close with the Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && lightbox.classList.contains('open')) {
+    closeLightbox();
   }
 });
