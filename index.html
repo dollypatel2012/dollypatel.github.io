@@ -1,82 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dolly Patel | Software Engineer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dolly Patel | Software Engineer</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <!-- Tailwind (optional, kept as is) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome 6 -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
-<!-- SIDEBAR -->
-<aside class="sidebar">
-<div class="logo">DP</div>
-<a href="#about" class="side-link"><span class="dot"></span>ABOUT</a>
-<a href="#skills" class="side-link"><span class="dot"></span>SKILLS</a>
-<a href="#education" class="side-link"><span class="dot"></span>EDUCATION</a>
-<a href="#projects" class="side-link"><span class="dot"></span>PROJECTS</a>
-<a href="#contact" class="side-link"><span class="dot"></span>CONTACT</a>
-</aside>
+  <!-- ========== SIDEBAR ========== -->
+  <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+    <div class="logo" aria-hidden="true">DP</div>
+    <nav>
+      <a href="#about" class="side-link" aria-current="page"><span class="dot"></span>ABOUT</a>
+      <a href="#skills" class="side-link"><span class="dot"></span>SKILLS</a>
+      <a href="#education" class="side-link"><span class="dot"></span>EDUCATION</a>
+      <a href="#projects" class="side-link"><span class="dot"></span>PROJECTS</a>
+      <a href="#contact" class="side-link"><span class="dot"></span>CONTACT</a>
+    </nav>
+  </aside>
 
-<main class="content">
+  <!-- Hamburger toggle button -->
+  <button
+    class="menu-toggle"
+    id="menuToggle"
+    aria-label="Toggle navigation menu"
+    aria-expanded="false"
+  >
+    <i class="fas fa-bars" id="menuIcon"></i>
+  </button>
 
-<!-- HERO -->
-<section id="about" class="section hero">
-<h1 class="gradient-text">Dolly Patel</h1>
-<h2 class="subtitle"><span id="typing"></span></h2>
+  <!-- ========== MAIN CONTENT ========== -->
+  <main id="main-content" class="content">
+    <!-- HERO / ABOUT -->
+    <section id="about" class="section hero">
+      <h1 class="gradient-text">Dolly Patel</h1>
+      <h2 class="subtitle"><span id="typing"></span></h2>
+      <p class="hero-text">
+        Computer Science student with strong foundations in algorithms, distributed systems
+        and full-stack engineering. Passionate about building scalable backend systems and cloud apps.
+      </p>
+    </section>
 
-<p class="hero-text">
-Computer Science student with strong foundations in algorithms, distributed systems
-and full-stack engineering. Passionate about building scalable backend systems and cloud apps.
-</p>
-</section>
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <h2 class="section-title">Technical Skills</h2>
+      <div class="skills-icons">
+        <i class="fab fa-html5" title="HTML5"></i>
+        <i class="fab fa-css3-alt" title="CSS3"></i>
+        <i class="fab fa-js" title="JavaScript"></i>
+        <i class="fab fa-python" title="Python"></i>
+        <i class="fab fa-react" title="React"></i>
+        <i class="fab fa-node" title="Node.js"></i>
+        <i class="fas fa-database" title="Databases"></i>
+        <i class="fab fa-git-alt" title="Git"></i>
+        <i class="fab fa-aws" title="AWS"></i>
+        <i class="fas fa-code" title="Other languages"></i>
+      </div>
+    </section>
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-<h2 class="section-title">Technical Skills</h2>
-<div class="grid">
-<div class="card">Languages: C, C++, JavaScript, Python</div>
-<div class="card">Frontend: HTML, CSS, Tailwind</div>
-<div class="card">Database: MongoDB</div>
-<div class="card">Cloud & DevOps: Git, AWS</div>
-</div>
-</section>
+    <!-- EDUCATION -->
+    <section id="education" class="section">
+      <h2 class="section-title">Education</h2>
+      <div class="card">
+        <p><strong>B.Tech Computer Science</strong> (2023-2027)</p>
+        <p>CGPA: 7.32 — Shri Ram Group of Institutions</p>
+      </div>
+    </section>
 
-<!-- EDUCATION -->
-<section id="education" class="section">
-<h2 class="section-title">Education</h2>
-<div class="card">
-B.Tech Computer Science (2023-2027)<br>
-CGPA: 7.32 — Shri Ram Group of Institutions
-</div>
-</section>
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <h2 class="section-title">Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>CookMate AI</h3>
+          <p>AI Recipe Manager</p>
+        </div>
+        <div class="card">
+          <h3>BookBazzar</h3>
+          <p>MERN Marketplace</p>
+        </div>
+        <div class="card">
+          <h3>BillMe</h3>
+          <p>Flutter Billing App</p>
+        </div>
+      </div>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="section">
-<h2 class="section-title">Projects</h2>
-<div class="grid">
-<div class="card">CookMate AI – AI Recipe Manager</div>
-<div class="card">BookBazzar – MERN Marketplace</div>
-<div class="card">BillMe – Flutter Billing App</div>
-</div>
-</section>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-icons">
+        <a href="mailto:dollypatel201205@gmail.com" aria-label="Send email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/dolly-patel-9563a22a8"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn profile"
+        >
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a
+          href="https://github.com/dollypatel2012"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub profile"
+        >
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </section>
+  </main>
 
-<!-- CONTACT -->
-<section id="contact" class="section contact">
-<h2 class="section-title">Contact</h2>
-<div class="contact-icons">
-<a href="mailto:dollypatel201205@gmail.com"><i class="fas fa-envelope"></i></a>
-<a href="https://www.linkedin.com/in/dolly-patel-9563a22a8" target="_blank"><i class="fab fa-linkedin"></i></a>
-<a href="https://github.com/dollypatel2012" target="_blank"><i class="fab fa-github"></i></a>
-</div>
-</section>
-
-</main>
-<script src="script.js"></script>
+  <!-- External JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
